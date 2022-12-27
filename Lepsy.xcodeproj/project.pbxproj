@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3DE5781D295A8FCF002725C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5781C295A8FCF002725C6 /* AppDelegate.swift */; };
+		3DE5781F295A8FCF002725C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5781E295A8FCF002725C6 /* MainViewController.swift */; };
+		3DE57821295A8FD0002725C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE57820295A8FD0002725C6 /* Assets.xcassets */; };
+		3DE57824295A8FD0002725C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE57822295A8FD0002725C6 /* Main.storyboard */; };
+		3DE5782C295A8FEE002725C6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5782B295A8FEE002725C6 /* main.swift */; };
+		3DE57832295A9023002725C6 /* NSColor+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5782F295A9023002725C6 /* NSColor+utils.swift */; };
+		3DE57833295A9023002725C6 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE57830295A9023002725C6 /* AppColors.swift */; };
+		3DE57834295A9023002725C6 /* LepsyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE57831295A9023002725C6 /* LepsyColor.swift */; };
+		3DFADE1A295B4EC7005D07F5 /* ShowRoutines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE19295B4EC7005D07F5 /* ShowRoutines.swift */; };
+		3DFADE1D295B4FAF005D07F5 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE1C295B4FAF005D07F5 /* Routine.swift */; };
+		3DFADE1F295B4FEE005D07F5 /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE1E295B4FEE005D07F5 /* Phrase.swift */; };
+		3DFADE21295B5156005D07F5 /* ShowRoutinesInteractorRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE20295B5156005D07F5 /* ShowRoutinesInteractorRecipe.swift */; };
+		3DFADE23295B5175005D07F5 /* ShowRoutinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE22295B5175005D07F5 /* ShowRoutinesView.swift */; };
+		3DFADE25295B522C005D07F5 /* ShowRoutinesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE24295B522C005D07F5 /* ShowRoutinesInteractor.swift */; };
+		3DFADE27295B529F005D07F5 /* ShowRoutinesPresenterRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE26295B529F005D07F5 /* ShowRoutinesPresenterRecipe.swift */; };
+		3DFADE2C295B545D005D07F5 /* ShowRoutinesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE2B295B545D005D07F5 /* ShowRoutinesPresenter.swift */; };
+		3DFADE2E295B5510005D07F5 /* ShowRoutinesViewRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE2D295B5510005D07F5 /* ShowRoutinesViewRecipe.swift */; };
+		3DFADE30295B5634005D07F5 /* ShowRoutinesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE2F295B5634005D07F5 /* ShowRoutinesConfigurator.swift */; };
+		3DFADE32295B5A6E005D07F5 /* CGColor+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE31295B5A6E005D07F5 /* CGColor+utils.swift */; };
+		3DFADE35295B61CA005D07F5 /* RoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE34295B61CA005D07F5 /* RoutineCell.swift */; };
+		3DFADE38295B637F005D07F5 /* LepsyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE37295B637F005D07F5 /* LepsyLabel.swift */; };
+		3DFADE3B295B6819005D07F5 /* NSTableView+utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE3A295B6819005D07F5 /* NSTableView+utils.swift */; };
+		3DFADE3E295B6EA6005D07F5 /* LepsyFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE3D295B6EA6005D07F5 /* LepsyFont.swift */; };
+		3DFADE40295B70A2005D07F5 /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE3F295B70A2005D07F5 /* AppFonts.swift */; };
+		3DFADE42295B70BA005D07F5 /* NSFont+util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFADE41295B70BA005D07F5 /* NSFont+util.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3DE57819295A8FCF002725C6 /* Lepsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lepsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DE5781C295A8FCF002725C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3DE5781E295A8FCF002725C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		3DE57820295A8FD0002725C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DE57823295A8FD0002725C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3DE57825295A8FD0002725C6 /* Lepsy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lepsy.entitlements; sourceTree = "<group>"; };
+		3DE5782B295A8FEE002725C6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		3DE5782F295A9023002725C6 /* NSColor+utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSColor+utils.swift"; sourceTree = "<group>"; };
+		3DE57830295A9023002725C6 /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		3DE57831295A9023002725C6 /* LepsyColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LepsyColor.swift; sourceTree = "<group>"; };
+		3DFADE19295B4EC7005D07F5 /* ShowRoutines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutines.swift; sourceTree = "<group>"; };
+		3DFADE1C295B4FAF005D07F5 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		3DFADE1E295B4FEE005D07F5 /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
+		3DFADE20295B5156005D07F5 /* ShowRoutinesInteractorRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesInteractorRecipe.swift; sourceTree = "<group>"; };
+		3DFADE22295B5175005D07F5 /* ShowRoutinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesView.swift; sourceTree = "<group>"; };
+		3DFADE24295B522C005D07F5 /* ShowRoutinesInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesInteractor.swift; sourceTree = "<group>"; };
+		3DFADE26295B529F005D07F5 /* ShowRoutinesPresenterRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesPresenterRecipe.swift; sourceTree = "<group>"; };
+		3DFADE2B295B545D005D07F5 /* ShowRoutinesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesPresenter.swift; sourceTree = "<group>"; };
+		3DFADE2D295B5510005D07F5 /* ShowRoutinesViewRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesViewRecipe.swift; sourceTree = "<group>"; };
+		3DFADE2F295B5634005D07F5 /* ShowRoutinesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowRoutinesConfigurator.swift; sourceTree = "<group>"; };
+		3DFADE31295B5A6E005D07F5 /* CGColor+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+utils.swift"; sourceTree = "<group>"; };
+		3DFADE34295B61CA005D07F5 /* RoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCell.swift; sourceTree = "<group>"; };
+		3DFADE37295B637F005D07F5 /* LepsyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LepsyLabel.swift; sourceTree = "<group>"; };
+		3DFADE3A295B6819005D07F5 /* NSTableView+utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTableView+utils.swift"; sourceTree = "<group>"; };
+		3DFADE3D295B6EA6005D07F5 /* LepsyFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LepsyFont.swift; sourceTree = "<group>"; };
+		3DFADE3F295B70A2005D07F5 /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		3DFADE41295B70BA005D07F5 /* NSFont+util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSFont+util.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DE57816295A8FCF002725C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3DE57810295A8FCF002725C6 = {
+			isa = PBXGroup;
+			children = (
+				3DE5781B295A8FCF002725C6 /* Lepsy */,
+				3DE5781A295A8FCF002725C6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DE5781A295A8FCF002725C6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DE57819295A8FCF002725C6 /* Lepsy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DE5781B295A8FCF002725C6 /* Lepsy */ = {
+			isa = PBXGroup;
+			children = (
+				3DE5782D295A9023002725C6 /* UI */,
+				3DFADE1B295B4F8B005D07F5 /* Models */,
+				3DFADE18295B4EA0005D07F5 /* Modules */,
+				3DE5781C295A8FCF002725C6 /* AppDelegate.swift */,
+				3DE5782B295A8FEE002725C6 /* main.swift */,
+				3DE5781E295A8FCF002725C6 /* MainViewController.swift */,
+				3DE57820295A8FD0002725C6 /* Assets.xcassets */,
+				3DE57822295A8FD0002725C6 /* Main.storyboard */,
+				3DE57825295A8FD0002725C6 /* Lepsy.entitlements */,
+			);
+			path = Lepsy;
+			sourceTree = "<group>";
+		};
+		3DE5782D295A9023002725C6 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE3C295B6E9A005D07F5 /* Fonts */,
+				3DE5782E295A9023002725C6 /* Colors */,
+				3DFADE39295B6807005D07F5 /* Utils */,
+				3DFADE36295B6368005D07F5 /* Components */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		3DE5782E295A9023002725C6 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE31295B5A6E005D07F5 /* CGColor+utils.swift */,
+				3DE5782F295A9023002725C6 /* NSColor+utils.swift */,
+				3DE57830295A9023002725C6 /* AppColors.swift */,
+				3DE57831295A9023002725C6 /* LepsyColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		3DFADE17295B4E8E005D07F5 /* ShowRoutines */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE19295B4EC7005D07F5 /* ShowRoutines.swift */,
+				3DFADE2F295B5634005D07F5 /* ShowRoutinesConfigurator.swift */,
+				3DFADE2A295B5445005D07F5 /* View */,
+				3DFADE29295B542F005D07F5 /* Presenter */,
+				3DFADE28295B541F005D07F5 /* Interactor */,
+			);
+			path = ShowRoutines;
+			sourceTree = "<group>";
+		};
+		3DFADE18295B4EA0005D07F5 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE17295B4E8E005D07F5 /* ShowRoutines */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		3DFADE1B295B4F8B005D07F5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE1C295B4FAF005D07F5 /* Routine.swift */,
+				3DFADE1E295B4FEE005D07F5 /* Phrase.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3DFADE28295B541F005D07F5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE20295B5156005D07F5 /* ShowRoutinesInteractorRecipe.swift */,
+				3DFADE24295B522C005D07F5 /* ShowRoutinesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		3DFADE29295B542F005D07F5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE26295B529F005D07F5 /* ShowRoutinesPresenterRecipe.swift */,
+				3DFADE2B295B545D005D07F5 /* ShowRoutinesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3DFADE2A295B5445005D07F5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE33295B61BA005D07F5 /* Cells */,
+				3DFADE2D295B5510005D07F5 /* ShowRoutinesViewRecipe.swift */,
+				3DFADE22295B5175005D07F5 /* ShowRoutinesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3DFADE33295B61BA005D07F5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE34295B61CA005D07F5 /* RoutineCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3DFADE36295B6368005D07F5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE37295B637F005D07F5 /* LepsyLabel.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3DFADE39295B6807005D07F5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE3A295B6819005D07F5 /* NSTableView+utils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		3DFADE3C295B6E9A005D07F5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3DFADE41295B70BA005D07F5 /* NSFont+util.swift */,
+				3DFADE3F295B70A2005D07F5 /* AppFonts.swift */,
+				3DFADE3D295B6EA6005D07F5 /* LepsyFont.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DE57818295A8FCF002725C6 /* Lepsy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DE57828295A8FD0002725C6 /* Build configuration list for PBXNativeTarget "Lepsy" */;
+			buildPhases = (
+				3DE57815295A8FCF002725C6 /* Sources */,
+				3DE57816295A8FCF002725C6 /* Frameworks */,
+				3DE57817295A8FCF002725C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lepsy;
+			productName = Lepsy;
+			productReference = 3DE57819295A8FCF002725C6 /* Lepsy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DE57811295A8FCF002725C6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					3DE57818295A8FCF002725C6 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 3DE57814295A8FCF002725C6 /* Build configuration list for PBXProject "Lepsy" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DE57810295A8FCF002725C6;
+			productRefGroup = 3DE5781A295A8FCF002725C6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DE57818295A8FCF002725C6 /* Lepsy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DE57817295A8FCF002725C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DE57821295A8FD0002725C6 /* Assets.xcassets in Resources */,
+				3DE57824295A8FD0002725C6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DE57815295A8FCF002725C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DFADE32295B5A6E005D07F5 /* CGColor+utils.swift in Sources */,
+				3DE5781F295A8FCF002725C6 /* MainViewController.swift in Sources */,
+				3DE5781D295A8FCF002725C6 /* AppDelegate.swift in Sources */,
+				3DFADE2C295B545D005D07F5 /* ShowRoutinesPresenter.swift in Sources */,
+				3DFADE23295B5175005D07F5 /* ShowRoutinesView.swift in Sources */,
+				3DE5782C295A8FEE002725C6 /* main.swift in Sources */,
+				3DFADE25295B522C005D07F5 /* ShowRoutinesInteractor.swift in Sources */,
+				3DFADE30295B5634005D07F5 /* ShowRoutinesConfigurator.swift in Sources */,
+				3DFADE2E295B5510005D07F5 /* ShowRoutinesViewRecipe.swift in Sources */,
+				3DFADE1F295B4FEE005D07F5 /* Phrase.swift in Sources */,
+				3DFADE3B295B6819005D07F5 /* NSTableView+utils.swift in Sources */,
+				3DE57834295A9023002725C6 /* LepsyColor.swift in Sources */,
+				3DE57833295A9023002725C6 /* AppColors.swift in Sources */,
+				3DFADE21295B5156005D07F5 /* ShowRoutinesInteractorRecipe.swift in Sources */,
+				3DFADE38295B637F005D07F5 /* LepsyLabel.swift in Sources */,
+				3DFADE27295B529F005D07F5 /* ShowRoutinesPresenterRecipe.swift in Sources */,
+				3DFADE40295B70A2005D07F5 /* AppFonts.swift in Sources */,
+				3DFADE42295B70BA005D07F5 /* NSFont+util.swift in Sources */,
+				3DFADE35295B61CA005D07F5 /* RoutineCell.swift in Sources */,
+				3DFADE1A295B4EC7005D07F5 /* ShowRoutines.swift in Sources */,
+				3DFADE3E295B6EA6005D07F5 /* LepsyFont.swift in Sources */,
+				3DFADE1D295B4FAF005D07F5 /* Routine.swift in Sources */,
+				3DE57832295A9023002725C6 /* NSColor+utils.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3DE57822295A8FD0002725C6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3DE57823295A8FD0002725C6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3DE57826295A8FD0002725C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DE57827295A8FD0002725C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3DE57829295A8FD0002725C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lepsy/Lepsy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4TLFBK6RD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertosamele.Lepsy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3DE5782A295A8FD0002725C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Lepsy/Lepsy.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4TLFBK6RD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.albertosamele.Lepsy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DE57814295A8FCF002725C6 /* Build configuration list for PBXProject "Lepsy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DE57826295A8FD0002725C6 /* Debug */,
+				3DE57827295A8FD0002725C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DE57828295A8FD0002725C6 /* Build configuration list for PBXNativeTarget "Lepsy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DE57829295A8FD0002725C6 /* Debug */,
+				3DE5782A295A8FD0002725C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DE57811295A8FCF002725C6 /* Project object */;
+}
