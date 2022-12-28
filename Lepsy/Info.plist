@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ATSApplicationFontsPath</key>
+	<string>Assets</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>IBMPlexSansCondensed-SemiBold.ttf</string>
+		<string>IBMPlexSansCondensed-Regular.ttf</string>
+		<string>Royalacid_o.ttf</string>
+	</array>
+</dict>
+</plist>

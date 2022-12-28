@@ -8,6 +8,7 @@ enum AppColors {
     
     enum Text: UInt32, LepsyColor {
         case main = 0x08090A
-        case accent = 0xED1C24
+        case secondary = 0xED1C24
+        case accent = 0xFDFFFC
     }
 }

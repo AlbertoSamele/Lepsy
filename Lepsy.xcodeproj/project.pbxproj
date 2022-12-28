@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D225FF8295B8EF600E3C701 /* AppSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D225FF7295B8EF600E3C701 /* AppSizing.swift */; };
+		3D225FFA295B8F7F00E3C701 /* LepsySizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D225FF9295B8F7F00E3C701 /* LepsySizing.swift */; };
+		3D225FFC295B8FBF00E3C701 /* CGFloat+util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D225FFB295B8FBF00E3C701 /* CGFloat+util.swift */; };
+		3D225FFF295B941300E3C701 /* Royalacid_o.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D225FFE295B941300E3C701 /* Royalacid_o.ttf */; };
+		3D226002295B9AD400E3C701 /* IBMPlexSansCondensed-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D226001295B9AD400E3C701 /* IBMPlexSansCondensed-Regular.ttf */; };
+		3D226004295B9BA300E3C701 /* IBMPlexSansCondensed-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3D226003295B9BA300E3C701 /* IBMPlexSansCondensed-SemiBold.ttf */; };
 		3DE5781D295A8FCF002725C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5781C295A8FCF002725C6 /* AppDelegate.swift */; };
 		3DE5781F295A8FCF002725C6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE5781E295A8FCF002725C6 /* MainViewController.swift */; };
 		3DE57821295A8FD0002725C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DE57820295A8FD0002725C6 /* Assets.xcassets */; };
@@ -35,6 +41,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D225FF7295B8EF600E3C701 /* AppSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSizing.swift; sourceTree = "<group>"; };
+		3D225FF9295B8F7F00E3C701 /* LepsySizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LepsySizing.swift; sourceTree = "<group>"; };
+		3D225FFB295B8FBF00E3C701 /* CGFloat+util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+util.swift"; sourceTree = "<group>"; };
+		3D225FFE295B941300E3C701 /* Royalacid_o.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Royalacid_o.ttf; sourceTree = "<group>"; };
+		3D226000295B955900E3C701 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		3D226001295B9AD400E3C701 /* IBMPlexSansCondensed-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansCondensed-Regular.ttf"; sourceTree = "<group>"; };
+		3D226003295B9BA300E3C701 /* IBMPlexSansCondensed-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IBMPlexSansCondensed-SemiBold.ttf"; sourceTree = "<group>"; };
 		3DE57819295A8FCF002725C6 /* Lepsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lepsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE5781C295A8FCF002725C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE5781E295A8FCF002725C6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +88,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D225FF6295B8EE000E3C701 /* Sizing */ = {
+			isa = PBXGroup;
+			children = (
+				3D225FFB295B8FBF00E3C701 /* CGFloat+util.swift */,
+				3D225FF7295B8EF600E3C701 /* AppSizing.swift */,
+				3D225FF9295B8F7F00E3C701 /* LepsySizing.swift */,
+			);
+			path = Sizing;
+			sourceTree = "<group>";
+		};
+		3D225FFD295B93F400E3C701 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3D225FFE295B941300E3C701 /* Royalacid_o.ttf */,
+				3D226001295B9AD400E3C701 /* IBMPlexSansCondensed-Regular.ttf */,
+				3D226003295B9BA300E3C701 /* IBMPlexSansCondensed-SemiBold.ttf */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		3DE57810295A8FCF002725C6 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +127,7 @@
 		3DE5781B295A8FCF002725C6 /* Lepsy */ = {
 			isa = PBXGroup;
 			children = (
+				3D226000295B955900E3C701 /* Info.plist */,
 				3DE5782D295A9023002725C6 /* UI */,
 				3DFADE1B295B4F8B005D07F5 /* Models */,
 				3DFADE18295B4EA0005D07F5 /* Modules */,
@@ -110,6 +144,7 @@
 		3DE5782D295A9023002725C6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				3D225FF6295B8EE000E3C701 /* Sizing */,
 				3DFADE3C295B6E9A005D07F5 /* Fonts */,
 				3DE5782E295A9023002725C6 /* Colors */,
 				3DFADE39295B6807005D07F5 /* Utils */,
@@ -213,6 +248,7 @@
 		3DFADE3C295B6E9A005D07F5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3D225FFD295B93F400E3C701 /* Assets */,
 				3DFADE41295B70BA005D07F5 /* NSFont+util.swift */,
 				3DFADE3F295B70A2005D07F5 /* AppFonts.swift */,
 				3DFADE3D295B6EA6005D07F5 /* LepsyFont.swift */,
@@ -278,6 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D226002295B9AD400E3C701 /* IBMPlexSansCondensed-Regular.ttf in Resources */,
+				3D226004295B9BA300E3C701 /* IBMPlexSansCondensed-SemiBold.ttf in Resources */,
+				3D225FFF295B941300E3C701 /* Royalacid_o.ttf in Resources */,
 				3DE57821295A8FD0002725C6 /* Assets.xcassets in Resources */,
 				3DE57824295A8FD0002725C6 /* Main.storyboard in Resources */,
 			);
@@ -291,10 +330,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DFADE32295B5A6E005D07F5 /* CGColor+utils.swift in Sources */,
+				3D225FF8295B8EF600E3C701 /* AppSizing.swift in Sources */,
 				3DE5781F295A8FCF002725C6 /* MainViewController.swift in Sources */,
 				3DE5781D295A8FCF002725C6 /* AppDelegate.swift in Sources */,
 				3DFADE2C295B545D005D07F5 /* ShowRoutinesPresenter.swift in Sources */,
 				3DFADE23295B5175005D07F5 /* ShowRoutinesView.swift in Sources */,
+				3D225FFC295B8FBF00E3C701 /* CGFloat+util.swift in Sources */,
 				3DE5782C295A8FEE002725C6 /* main.swift in Sources */,
 				3DFADE25295B522C005D07F5 /* ShowRoutinesInteractor.swift in Sources */,
 				3DFADE30295B5634005D07F5 /* ShowRoutinesConfigurator.swift in Sources */,
@@ -309,6 +350,7 @@
 				3DFADE40295B70A2005D07F5 /* AppFonts.swift in Sources */,
 				3DFADE42295B70BA005D07F5 /* NSFont+util.swift in Sources */,
 				3DFADE35295B61CA005D07F5 /* RoutineCell.swift in Sources */,
+				3D225FFA295B8F7F00E3C701 /* LepsySizing.swift in Sources */,
 				3DFADE1A295B4EC7005D07F5 /* ShowRoutines.swift in Sources */,
 				3DFADE3E295B6EA6005D07F5 /* LepsyFont.swift in Sources */,
 				3DFADE1D295B4FAF005D07F5 /* Routine.swift in Sources */,
@@ -455,6 +497,7 @@
 				DEVELOPMENT_TEAM = X4TLFBK6RD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lepsy/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -482,6 +525,7 @@
 				DEVELOPMENT_TEAM = X4TLFBK6RD;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Lepsy/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

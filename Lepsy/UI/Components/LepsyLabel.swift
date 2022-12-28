@@ -5,6 +5,10 @@ class LepsyLabel: NSView {
     
     private lazy var textField = createTextField()
     
+    // MARK: - Computed properties
+    
+    var textLayer: CALayer? { textField.layer }
+    
     // MARK: - Datasource properties
     
     var text: String? {
@@ -54,6 +58,7 @@ class LepsyLabel: NSView {
 private extension LepsyLabel {
     func createTextField() -> NSTextField {
         let textField = NSTextField()
+        textField.wantsLayer = true
         textField.drawsBackground = false
         textField.isBezeled = false
         textField.isEditable = false

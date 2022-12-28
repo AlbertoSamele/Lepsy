@@ -1,8 +1,16 @@
 import Cocoa
 
 class ShowRoutinesView: NSViewController {
+    // MARK: - Routine
+    
+    private struct Routine {
+        let name: String
+        let selected: Bool
+    }
+    
     // MARK: - UI properties
     
+    private lazy var logoView = createLogoView()
     private lazy var routinesTableView = createTableView()
     
     // MARK: - Private properties
@@ -11,7 +19,7 @@ class ShowRoutinesView: NSViewController {
     
     // MARK: - Datasource properties
     
-    private var routines: [String] = []
+    private var routines: [Routine] = []
     
     // MARK: - Overriden properties
     
@@ -44,7 +52,9 @@ class ShowRoutinesView: NSViewController {
 
 extension ShowRoutinesView: ShowRoutinesViewRecipe {
     func displayRoutines(viewModel: ShowRoutines.LoadRoutines.ViewModel) {
-        routines = viewModel.routines
+        routines = viewModel.routines.enumerated().map {
+            .init(name: $0.element, selected: $0.offset == viewModel.selectedRoutineIndex)
+        }
         routinesTableView.reloadData()
     }
 }
@@ -58,7 +68,8 @@ extension ShowRoutinesView: NSTableViewDelegate, NSTableViewDataSource {
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         let cell = tableView.dequeue(cell: { RoutineCell() }, identifier: RoutineCell.identifierValue)
-        cell.configure(title: routines[row])
+        let routine = routines[row]
+        cell.configure(title: routine.name, selected: routine.selected)
         return cell
     }
 }
@@ -66,9 +77,21 @@ extension ShowRoutinesView: NSTableViewDelegate, NSTableViewDataSource {
 // MARK: - ShowRoutinesView+UI
 
 private extension ShowRoutinesView {
+    func createLogoView() -> NSView {
+        let label = LepsyLabel()
+        label.text = "Lepsy"
+        label.font = .appFonts(AppFonts.Sylized.large)
+        label.textColor = .appColor(AppColors.Text.secondary)
+        label.textAlignment = .center
+        return label
+    }
+    
     func createTableView() -> NSTableView {
         let tableView = NSTableView()
         tableView.headerView = nil
+        tableView.style = .plain
+        tableView.selectionHighlightStyle = .none
+        tableView.focusRingType = .none
         tableView.addTableColumn(.init(identifier: .init(RoutineCell.identifierValue)))
         return tableView
     }
@@ -76,17 +99,22 @@ private extension ShowRoutinesView {
     func setupLayout() {
         view.layer?.backgroundColor = .appColor(AppColors.Background.main)
         
-        [routinesTableView].forEach {
+        [logoView, routinesTableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
         
+        let padding: CGFloat = .appSizing(AppSizing.Spacing.medium)
         NSLayoutConstraint.activate([
+            // Logo
+            logoView.topAnchor.constraint(equalTo: view.topAnchor, constant: padding),
+            logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoView.widthAnchor.constraint(equalTo: view.widthAnchor),
             // Tableview
             routinesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             routinesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            routinesTableView.topAnchor.constraint(equalTo: view.topAnchor),
-            routinesTableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+            routinesTableView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: padding),
+            routinesTableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -padding),
         ])
     }
 }
