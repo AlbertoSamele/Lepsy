@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D0E8B47295CD17100D9E30E /* LepsyTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D0E8B46295CD17100D9E30E /* LepsyTableView.swift */; };
 		3D225FF8295B8EF600E3C701 /* AppSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D225FF7295B8EF600E3C701 /* AppSizing.swift */; };
 		3D225FFA295B8F7F00E3C701 /* LepsySizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D225FF9295B8F7F00E3C701 /* LepsySizing.swift */; };
 		3D225FFC295B8FBF00E3C701 /* CGFloat+util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D225FFB295B8FBF00E3C701 /* CGFloat+util.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D0E8B46295CD17100D9E30E /* LepsyTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LepsyTableView.swift; sourceTree = "<group>"; };
 		3D225FF7295B8EF600E3C701 /* AppSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSizing.swift; sourceTree = "<group>"; };
 		3D225FF9295B8F7F00E3C701 /* LepsySizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LepsySizing.swift; sourceTree = "<group>"; };
 		3D225FFB295B8FBF00E3C701 /* CGFloat+util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+util.swift"; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				3DFADE37295B637F005D07F5 /* LepsyLabel.swift */,
+				3D0E8B46295CD17100D9E30E /* LepsyTableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -349,6 +352,7 @@
 				3DFADE27295B529F005D07F5 /* ShowRoutinesPresenterRecipe.swift in Sources */,
 				3DFADE40295B70A2005D07F5 /* AppFonts.swift in Sources */,
 				3DFADE42295B70BA005D07F5 /* NSFont+util.swift in Sources */,
+				3D0E8B47295CD17100D9E30E /* LepsyTableView.swift in Sources */,
 				3DFADE35295B61CA005D07F5 /* RoutineCell.swift in Sources */,
 				3D225FFA295B8F7F00E3C701 /* LepsySizing.swift in Sources */,
 				3DFADE1A295B4EC7005D07F5 /* ShowRoutines.swift in Sources */,

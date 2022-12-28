@@ -32,19 +32,15 @@ class ShowRoutinesView: NSViewController {
         super.viewDidLoad()
         setupDelegates()
         setupLayout()
-        loadRoutines()
+        interactor?.loadRoutines(request: .init())
     }
     
     // MARK: - Private methods
     
     private func setupDelegates() {
         routinesTableView.delegate = self
+        routinesTableView.lepsyDelegate = self
         routinesTableView.dataSource = self
-    }
-    
-    private func loadRoutines() {
-        let request = ShowRoutines.LoadRoutines.Request()
-        interactor?.loadRoutines(request: request)
     }
 }
 
@@ -57,11 +53,23 @@ extension ShowRoutinesView: ShowRoutinesViewRecipe {
         }
         routinesTableView.reloadData()
     }
+    
+    func updateSelectedRoutine(viewModel: ShowRoutines.SelectRoutine.ViewModel) {
+        if let previousSelectionIndex = viewModel.previousSelectedRoutineIndex,
+           let previousView = routinesTableView.view(atColumn: 0, row: previousSelectionIndex, makeIfNecessary: false) as? RoutineCell
+        {
+            previousView.setSelected(false)
+        }
+        
+        if let currentView = routinesTableView.view(atColumn: 0, row: viewModel.newSelectedRoutineIndex, makeIfNecessary: false) as? RoutineCell {
+            currentView.setSelected(true)
+        }
+    }
 }
 
-// MARK: - ShowRoutinesView+NSTableViewDelegate+NSTableViewDataSource
+// MARK: - ShowRoutinesView+LepsyTableViewDelegate+NSTableViewDelegate+NSTableViewDataSource
 
-extension ShowRoutinesView: NSTableViewDelegate, NSTableViewDataSource {
+extension ShowRoutinesView: LepsyTableViewDelegate, NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         routines.count
     }
@@ -71,6 +79,10 @@ extension ShowRoutinesView: NSTableViewDelegate, NSTableViewDataSource {
         let routine = routines[row]
         cell.configure(title: routine.name, selected: routine.selected)
         return cell
+    }
+    
+    func tableView(_ tableView: NSTableView, didSelectRowAt row: Int, column: Int) {
+        interactor?.selectRoutine(request: .init(selectedRoutineIndex: row))
     }
 }
 
@@ -86,8 +98,8 @@ private extension ShowRoutinesView {
         return label
     }
     
-    func createTableView() -> NSTableView {
-        let tableView = NSTableView()
+    func createTableView() -> LepsyTableView {
+        let tableView = LepsyTableView()
         tableView.headerView = nil
         tableView.style = .plain
         tableView.selectionHighlightStyle = .none

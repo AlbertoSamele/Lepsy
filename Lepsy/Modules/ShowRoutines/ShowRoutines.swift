@@ -10,7 +10,22 @@ enum ShowRoutines {
         
         struct ViewModel {
             let routines: [String]
+            let selectedRoutineIndex: Int?
+        }
+    }
+    
+    enum SelectRoutine {
+        struct Request {
             let selectedRoutineIndex: Int
+        }
+        
+        struct Response {
+            let selectedRoutineData: Routine
+        }
+        
+        struct ViewModel {
+            let previousSelectedRoutineIndex: Int?
+            let newSelectedRoutineIndex: Int
         }
     }
 }
