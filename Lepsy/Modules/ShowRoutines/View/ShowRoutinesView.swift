@@ -12,6 +12,8 @@ class ShowRoutinesView: NSViewController {
     
     private lazy var logoView = createLogoView()
     private lazy var routinesTableView = createTableView()
+    private lazy var selectionIndicator = createSelectionIndicator()
+    private var selectionIndicatorCenterYConstraint: NSLayoutConstraint?
     
     // MARK: - Private properties
     
@@ -42,6 +44,32 @@ class ShowRoutinesView: NSViewController {
         routinesTableView.lepsyDelegate = self
         routinesTableView.dataSource = self
     }
+    
+    private func setCell(at index: Int, selected: Bool) {
+        guard let cell = routinesTableView.view(atColumn: 0, row: index, makeIfNecessary: true) as? RoutineCell else {
+            return
+        }
+        
+        var selectionDelay: CGFloat = 0
+        if selected {
+            let animationDuration: CGFloat = 0.25
+            selectionDelay = animationDuration * 0.4
+            NSAnimationContext.runAnimationGroup { context in
+                context.duration = animationDuration
+                context.allowsImplicitAnimation = true
+                
+                selectionIndicatorCenterYConstraint?.isActive = false
+                selectionIndicatorCenterYConstraint = selectionIndicator.centerYAnchor.constraint(equalTo: cell.centerYAnchor)
+                selectionIndicatorCenterYConstraint?.isActive = true
+                
+                view.layoutSubtreeIfNeeded()
+            }
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + selectionDelay) {
+            cell.setSelected(selected)
+        }
+    }
 }
 
 // MARK: - ShowRoutinesView+ShowRoutinesViewRecipe
@@ -52,18 +80,14 @@ extension ShowRoutinesView: ShowRoutinesViewRecipe {
             .init(name: $0.element, selected: $0.offset == viewModel.selectedRoutineIndex)
         }
         routinesTableView.reloadData()
+        setCell(at: viewModel.selectedRoutineIndex, selected: true)
     }
     
     func updateSelectedRoutine(viewModel: ShowRoutines.SelectRoutine.ViewModel) {
-        if let previousSelectionIndex = viewModel.previousSelectedRoutineIndex,
-           let previousView = routinesTableView.view(atColumn: 0, row: previousSelectionIndex, makeIfNecessary: false) as? RoutineCell
-        {
-            previousView.setSelected(false)
+        if let previousSelectionIndex = viewModel.previousSelectedRoutineIndex {
+            setCell(at: previousSelectionIndex, selected: false)
         }
-        
-        if let currentView = routinesTableView.view(atColumn: 0, row: viewModel.newSelectedRoutineIndex, makeIfNecessary: false) as? RoutineCell {
-            currentView.setSelected(true)
-        }
+        setCell(at: viewModel.newSelectedRoutineIndex, selected: true)
     }
 }
 
@@ -98,6 +122,14 @@ private extension ShowRoutinesView {
         return label
     }
     
+    func createSelectionIndicator() -> NSView {
+        let view = NSView()
+        view.wantsLayer = true
+        view.layer?.backgroundColor = .appColor(AppColors.Background.accent)
+        view.layer?.cornerRadius = .appSizing(AppSizing.CornerRadius.small)
+        return view
+    }
+    
     func createTableView() -> LepsyTableView {
         let tableView = LepsyTableView()
         tableView.headerView = nil
@@ -111,7 +143,7 @@ private extension ShowRoutinesView {
     func setupLayout() {
         view.layer?.backgroundColor = .appColor(AppColors.Background.main)
         
-        [logoView, routinesTableView].forEach {
+        [logoView, selectionIndicator, routinesTableView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -127,6 +159,10 @@ private extension ShowRoutinesView {
             routinesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             routinesTableView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: padding),
             routinesTableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -padding),
+            // Selection indicator
+            selectionIndicator.widthAnchor.constraint(equalTo: routinesTableView.widthAnchor, multiplier: 0.9),
+            selectionIndicator.heightAnchor.constraint(equalToConstant: 25),
+            selectionIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])
     }
 }

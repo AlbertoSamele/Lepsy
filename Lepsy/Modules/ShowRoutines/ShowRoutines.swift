@@ -10,7 +10,7 @@ enum ShowRoutines {
         
         struct ViewModel {
             let routines: [String]
-            let selectedRoutineIndex: Int?
+            let selectedRoutineIndex: Int
         }
     }
     

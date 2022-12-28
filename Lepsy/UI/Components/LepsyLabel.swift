@@ -5,10 +5,6 @@ class LepsyLabel: NSView {
     
     private lazy var textField = createTextField()
     
-    // MARK: - Computed properties
-    
-    var textLayer: CALayer? { textField.layer }
-    
     // MARK: - Datasource properties
     
     var text: String? {
