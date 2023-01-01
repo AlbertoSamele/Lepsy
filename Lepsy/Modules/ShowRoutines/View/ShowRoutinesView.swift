@@ -160,7 +160,7 @@ private extension ShowRoutinesView {
             routinesTableView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: padding),
             routinesTableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -padding),
             // Selection indicator
-            selectionIndicator.widthAnchor.constraint(equalTo: routinesTableView.widthAnchor, multiplier: 0.9),
+            selectionIndicator.widthAnchor.constraint(equalTo: routinesTableView.widthAnchor, multiplier: 0.925),
             selectionIndicator.heightAnchor.constraint(equalToConstant: 25),
             selectionIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])

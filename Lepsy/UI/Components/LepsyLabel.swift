@@ -36,6 +36,11 @@ class LepsyLabel: NSView {
         }
     }
     
+    var lineBreakMode: NSLineBreakMode {
+        get { textField.lineBreakMode }
+        set { textField.lineBreakMode = newValue }
+    }
+    
     // MARK: - Inits
     
     override init(frame frameRect: NSRect) {
@@ -66,6 +71,7 @@ private extension LepsyLabel {
         textColor = .appColor(AppColors.Text.main)
         font = .appFonts(AppFonts.Regular.medium)
         textAlignment = .left
+        lineBreakMode = .byTruncatingTail
     }
     
     func setupLayout() {

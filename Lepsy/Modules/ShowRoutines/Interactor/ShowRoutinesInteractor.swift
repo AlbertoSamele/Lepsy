@@ -13,7 +13,7 @@ class ShowRoutinesInteractor {
     
     private func fetchRoutines() -> [Routine] {
         routines = [
-            .init(id: "id1", name: "First routine", phrases: []),
+            .init(id: "id1", name: "First routineeroutineeroutineeroutineeroutineeroutineeroutineeroutineeroutineeroutinee", phrases: []),
             .init(id: "id2", name: "Second routine", phrases: []),
             .init(id: "id3", name: "Third routine", phrases: [])
         ]
