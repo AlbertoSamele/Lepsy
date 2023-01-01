@@ -5,15 +5,15 @@ class ShowRoutinesView: NSViewController {
     
     private struct Routine {
         let name: String
-        let selected: Bool
+        var selected: Bool
     }
     
     // MARK: - UI properties
     
     private lazy var logoView = createLogoView()
+    private lazy var routinesScrollView = createScrollView()
     private lazy var routinesTableView = createTableView()
     private lazy var selectionIndicator = createSelectionIndicator()
-    private var selectionIndicatorCenterYConstraint: NSLayoutConstraint?
     
     // MARK: - Private properties
     
@@ -57,12 +57,7 @@ class ShowRoutinesView: NSViewController {
             NSAnimationContext.runAnimationGroup { context in
                 context.duration = animationDuration
                 context.allowsImplicitAnimation = true
-                
-                selectionIndicatorCenterYConstraint?.isActive = false
-                selectionIndicatorCenterYConstraint = selectionIndicator.centerYAnchor.constraint(equalTo: cell.centerYAnchor)
-                selectionIndicatorCenterYConstraint?.isActive = true
-                
-                view.layoutSubtreeIfNeeded()
+                selectionIndicator.frame.origin.y = cell.convert(cell.frame, to: routinesTableView).origin.y
             }
         }
         
@@ -85,8 +80,10 @@ extension ShowRoutinesView: ShowRoutinesViewRecipe {
     
     func updateSelectedRoutine(viewModel: ShowRoutines.SelectRoutine.ViewModel) {
         if let previousSelectionIndex = viewModel.previousSelectedRoutineIndex {
+            routines[previousSelectionIndex].selected = false
             setCell(at: previousSelectionIndex, selected: false)
         }
+        routines[viewModel.newSelectedRoutineIndex].selected = true
         setCell(at: viewModel.newSelectedRoutineIndex, selected: true)
     }
 }
@@ -130,6 +127,13 @@ private extension ShowRoutinesView {
         return view
     }
     
+    func createScrollView() -> NSScrollView {
+        let scrollView = NSScrollView()
+        scrollView.backgroundColor = .clear
+        scrollView.drawsBackground = false
+        return scrollView
+    }
+    
     func createTableView() -> LepsyTableView {
         let tableView = LepsyTableView()
         tableView.headerView = nil
@@ -143,7 +147,10 @@ private extension ShowRoutinesView {
     func setupLayout() {
         view.layer?.backgroundColor = .appColor(AppColors.Background.main)
         
-        [logoView, selectionIndicator, routinesTableView].forEach {
+        routinesScrollView.documentView = routinesTableView
+        routinesScrollView.contentView.addSubview(selectionIndicator, positioned: .below, relativeTo: routinesScrollView.documentView!)
+        selectionIndicator.translatesAutoresizingMaskIntoConstraints = false
+        [logoView, routinesScrollView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             view.addSubview($0)
         }
@@ -155,12 +162,12 @@ private extension ShowRoutinesView {
             logoView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logoView.widthAnchor.constraint(equalTo: view.widthAnchor),
             // Tableview
-            routinesTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            routinesTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            routinesTableView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: padding),
-            routinesTableView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -padding),
+            routinesScrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            routinesScrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            routinesScrollView.topAnchor.constraint(equalTo: logoView.bottomAnchor, constant: padding),
+            routinesScrollView.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor, constant: -padding),
             // Selection indicator
-            selectionIndicator.widthAnchor.constraint(equalTo: routinesTableView.widthAnchor, multiplier: 0.925),
+            selectionIndicator.widthAnchor.constraint(equalTo: routinesScrollView.widthAnchor, multiplier: 0.925),
             selectionIndicator.heightAnchor.constraint(equalToConstant: 25),
             selectionIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
         ])

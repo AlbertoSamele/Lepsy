@@ -22,6 +22,11 @@ class RoutineCell: NSTableCellView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func prepareForReuse() {
+        titleLabel.textColor = .appColor(AppColors.Text.main)
+        super.prepareForReuse()
+    }
+    
     // MARK: - Public methods
     
     func configure(title: String?, selected: Bool) {
